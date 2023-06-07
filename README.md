@@ -41,56 +41,48 @@ Give the respective inputs for timing diagram and obtain the results.
 */
 ## Program:
 
-Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: Yamunaasri
+/*
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+Developed by: Yamunaasri T S
 RegisterNumber:  212222240117
-### COMBINATION USING NAND GATE
-/*
-module combone(A,B,C,D,F);
+
+
+F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+
+module exp2f1(A,B,C,D,f1);
 input A,B,C,D;
-output F;
-wire P,Q,R;
-assign P=(~(~C & B & A));
-assign Q=(~(~D & C & A));
-assign R=(~(C & ~B & A));
-assign F=~(P & Q & R);
+output f1;
+assign f1=(~B&~D)|(A&B&~C)|(~A&B&D);
 endmodule
-*/
 
-### COMBINATION USING NOR GATE
+F2=xy’z+x’y’z+w’xy+wx’y+wxy
+
+module exp2(w,x,y,z,f2);
+input w,x,y,z;
+output f2;
+assign f2=(~y&z)|(x&y)|(w&y);
+endmodule
 /*
-module combtwo(A,B,C,D,F);
-input A,B,C,D;
-output F;
-wire P,Q,R,S;
-assign P = (C & ~B & A);
-assign Q = (D & ~C & A);
-assign R = (C & ~B & A);
-assign S = (~(P | Q | R));
-assign F = (~s);
-endmodule 
-*/
-
 
 ## Output:
 ## COMBINATION USING NAND GATE
 ### RTL
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/f507749d-3f2f-4662-80de-edd229b9772e)
+F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+![233444435-4818a840-64c2-483b-a579-1e721d4a128e](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/3b69b110-11cb-4a2d-9dce-ff93826b52c5)
+
+
+F2=xy’z+x’y’z+w’xy+wx’y+wxy
+![233444228-a12416d9-cc9c-4d53-8da7-1eb39e636955](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/6879d8a2-ca40-48f3-aa2e-6de73cc13d7e)
+
 
 ### Timing Diagram
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/cca66867-512c-46d6-80bd-02f9b93c6e6d)
-### TRUTH TABLE
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/4aa9ced9-f58a-47e6-9fff-17724bafcb5b)
+F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+![233448490-bde5a4e7-3465-45cb-8e95-49a796d61035](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/fbc8ab14-1ce4-4596-8142-b5d5293a74d5)
 
-## COMBINATION USING NOR GATE
-### RTL
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/00ee1327-6a2d-414e-91d2-6ac1095771f4)
+F2=xy’z+x’y’z+w’xy+wx’y+wxy
+![233446842-1ef9acbf-a8d4-459f-a747-f5e7aae8e322](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/0402187c-2bd4-4820-bfad-1c66e4c59726)
 
-### Timing Diagram
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/dd1ed1ca-9a37-46f9-96ff-e2c0ed56c0b1)
 
-### Truth table
-![image](https://github.com/Yamunaasri/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/assets/115707860/7eb48a90-e039-4601-9303-3606f4e6e858)
 
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
